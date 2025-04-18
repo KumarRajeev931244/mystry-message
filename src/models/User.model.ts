@@ -1,4 +1,5 @@
 import mongoose, {Schema, Document} from "mongoose";
+import { boolean } from "zod";
 
 export interface Message extends Document{
     content: string,
@@ -25,6 +26,7 @@ export interface User extends Document{
     verifyCode:string,
     verifyCodeExpiry:Date,
     isLoggedIn:boolean,
+    isVerified:boolean,
     isAcceptingMessage:boolean,
     message: Message[]
 
@@ -59,6 +61,10 @@ const UserSchema: Schema<User> = new Schema({
     isLoggedIn:{
         type: Boolean,
         default: false
+    },
+    isVerified:{
+        type:Boolean,
+        default:false
     },
     isAcceptingMessage:{
         type: Boolean,
