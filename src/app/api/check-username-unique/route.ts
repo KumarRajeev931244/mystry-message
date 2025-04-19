@@ -26,7 +26,7 @@ export async function GET(request: Request){
                 status: 400
             })
         }
-        const {username} = result.data
+        const {username }= result.data
         const existingVerifiedUser = await UserModel.findOne({
                 username,
                 isVerified: true
@@ -48,7 +48,7 @@ export async function GET(request: Request){
         })
 
     } catch (error) {
-        console.log("error checking username:", error)
+        console.log("error while checking username:", error)
         return Response.json({
             success:false,
             message: "error while checking username"
