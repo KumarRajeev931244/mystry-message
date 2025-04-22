@@ -1,6 +1,5 @@
 'use client'
 import React from "react"
-
 import { signOut, useSession } from "next-auth/react"
 import { User } from "next-auth"
 import { Button } from "./ui/button"
@@ -22,7 +21,7 @@ const Navbar  = ()  => {
                         </>
                     ) : (
                         <Link href='/sign-in'>
-                            <Button className="w-full md:w-auto">Login</Button>
+                            <Button className="w-full md:w-auto cursor-pointer"  >Login</Button>
                         </Link>
                     )
                 }

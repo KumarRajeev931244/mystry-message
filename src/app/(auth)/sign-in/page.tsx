@@ -77,7 +77,7 @@ const page = () => {
                         )}
                         >  
                         </FormField>
-                        <Button type="submit">
+                        <Button className='cursor-pointer' type="submit">
                             sign in
                         </Button>
                     </form>

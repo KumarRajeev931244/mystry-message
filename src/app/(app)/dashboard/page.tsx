@@ -1,4 +1,5 @@
 'use client'
+import React from "react"
 import axios, { AxiosError } from "axios"
 import { Message } from "@/models/User.model"
 import { acceptMessageSchema } from "@/schemas/acceptMessageSchema"
@@ -38,7 +39,7 @@ const page = () => {
     const fetchAcceptMessage = useCallback(async() => {
         setIsSwitchLoading(true)
         try {
-            const response = await axios.get(`/api/accept-message`)
+            const response = await axios.get(`/api/accept-messages`)
             setValue('acceptMessage', response.data.isAcceptingMessage)
         } catch (error) {
             const axiosError = error as AxiosError<ApiResponse>
@@ -155,4 +156,6 @@ const page = () => {
     )
 }
 
+
 export default page
+

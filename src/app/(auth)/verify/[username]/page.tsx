@@ -1,6 +1,6 @@
 'use client'
 import { useParams, useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React from 'react'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios, { AxiosError } from 'axios'
@@ -29,7 +29,7 @@ const VerifyAccount = () => {
             toast("success",{
                 description: response.data.message
             })
-            router.replace('sign-in')
+            router.replace('/sign-in')
         } catch (error) {
             console.error("error in signup of user", error)
             const axiosError = error as AxiosError<ApiResponse>
@@ -63,7 +63,7 @@ const VerifyAccount = () => {
                             )}
                         >
                         </FormField>
-                        <Button type='submit'>Submit</Button>
+                        <Button className='cursor-pointer' type='submit'>Submit</Button>
                     </form>
                 </Form>
             
